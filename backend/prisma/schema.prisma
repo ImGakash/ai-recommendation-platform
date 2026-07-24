@@ -1,0 +1,55 @@
+
+
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Event {
+  id         String   @id @default(uuid())
+
+  userId     String
+  tenantId   String
+
+  eventType  String
+
+  entityId   String
+  category   String
+
+  metadata   Json?
+
+  createdAt  DateTime @default(now())
+}
+
+model Entity {
+  id          String   @id @default(uuid())
+
+  tenantId    String
+
+  entityId    String   @unique
+
+  title       String
+
+  category    String
+
+  metadata    Json?
+
+  createdAt   DateTime @default(now())
+}
+
+model Profile {
+  id         String   @id @default(uuid())
+
+  userId     String
+
+  category   String
+  score      Int      @default(0)
+
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, category])
+}
+

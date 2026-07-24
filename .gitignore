@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build & compiler outputs
+dist/
+**/dist/
+dist-ssr/
+build/
+**/build/
+*.tsbuildinfo
+.tmp/
+**/node_modules/.tmp/
+
+# Environment files & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS & IDE Junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Prisma local database files
+prisma/dev.db
+prisma/dev.db-journal
+*.sqlite
